@@ -32,9 +32,20 @@ namespace Infrastructure.Repositories
             return _bookings;
         }
 
-        // Tilføjer en ny booking og gemmer listen
+        // Tilføjer en ny booking med automatisk ID og gemmer listen
         public void Add(Visit visit)
         {
+            int nextId = 1;
+
+            foreach (Visit b in _bookings)
+            {
+                if (b.Id >= nextId)
+                {
+                    nextId = b.Id + 1;
+                }
+            }
+
+            visit.Id = nextId;
             _bookings.Add(visit);
             SaveToFile();
         }
@@ -44,6 +55,27 @@ namespace Infrastructure.Repositories
         {
             _bookings = visits;
             SaveToFile();
+        }
+
+        // Sletter en booking baseret på ID og gemmer listen
+        public void Delete(int id)
+        {
+            Visit toRemove = null;
+
+            foreach (Visit booking in _bookings)
+            {
+                if (booking.Id == id)
+                {
+                    toRemove = booking;
+                    break;
+                }
+            }
+
+            if (toRemove != null)
+            {
+                _bookings.Remove(toRemove);
+                SaveToFile();
+            }
         }
 
         // Hjælpefunktion: skriver listen til JSON-fil
