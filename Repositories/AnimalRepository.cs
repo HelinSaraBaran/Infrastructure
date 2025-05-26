@@ -104,35 +104,60 @@ namespace Infrastructure.Repositories
         private void InitializeAnimals()
         {
             _animals = new List<Animal>
-            {
-                new Animal
-                {
-                    Id = 1,
-                    Name = "Bella",
-                    Gender = "Hun",
-                    Species = "Hund",
-                    Description = "En legesyg og kærlig hund",
-                    ImagePath = "images/bella.jpg"
-                },
-                new Animal
-                {
-                    Id = 2,
-                    Name = "Milo",
-                    Gender = "Han",
-                    Species = "Kat",
-                    Description = "En rolig og nysgerrig kat",
-                    ImagePath = "images/milo.jpg"
-                },
-                new Animal
-                {
-                    Id = 3,
-                    Name = "Luna",
-                    Gender = "Hun",
-                    Species = "Kanin",
-                    Description = "En nysgerrig og sød kanin",
-                    ImagePath = "images/luna.jpg"
-                }
-            };
+    {
+        new Animal
+        {
+            Id = 1,
+            Name = "Bella",
+            Gender = "Hun",
+            Species = "Hund",
+            Race = "Labrador",
+            Size = "Stor",
+            BirthYear = 2018,
+            ChipNumber = "1234567890",
+            SpecialMarks = "Hvid pote",
+            Description = "En legesyg og kærlig hund",
+            IsSterilized = true,
+            IsVaccinated = true,
+            ImagePath = "images/bella.jpg",
+            VisitLog = new List<VisitLogEntry>()
+        },
+        new Animal
+        {
+            Id = 2,
+            Name = "Milo",
+            Gender = "Han",
+            Species = "Kat",
+            Race = "Blanding",
+            Size = "Lille",
+            BirthYear = 2020,
+            ChipNumber = "9876543210",
+            SpecialMarks = "Sort plet på næsen",
+            Description = "En rolig og nysgerrig kat",
+            IsSterilized = false,
+            IsVaccinated = true,
+            ImagePath = "images/milo.jpg",
+            VisitLog = new List<VisitLogEntry>()
+        },
+        new Animal
+        {
+            Id = 3,
+            Name = "Luna",
+            Gender = "Hun",
+            Species = "Kanin",
+            Race = "Løvehoved",
+            Size = "Mellem",
+            BirthYear = 2021,
+            ChipNumber = "000111222",
+            SpecialMarks = "Lang pels på hovedet",
+            Description = "En nysgerrig og sød kanin",
+            IsSterilized = false,
+            IsVaccinated = false,
+            ImagePath = "images/luna.jpg",
+            VisitLog = new List<VisitLogEntry>()
         }
+    };
+        }
+
     }
 }
