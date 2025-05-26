@@ -1,0 +1,10 @@
+[
+  {
+    "Id": 1,
+    "Name": "Bella",
+    "Species": "Hund",
+    "Gender": "Hun",
+    "ImagePath": "images/bella.jpg",
+    "Description": "Sød og legesyg hund."
+  }
+]
